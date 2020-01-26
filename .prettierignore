@@ -1,0 +1,4 @@
+coverage/
+*.ico
+*.png
+public/robots.txt
