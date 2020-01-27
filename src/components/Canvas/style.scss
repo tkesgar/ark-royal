@@ -1,0 +1,241 @@
+@mixin font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+@mixin font-pragati {
+  font-family: "Pragati Narrow", sans-serif;
+}
+
+.Canvas {
+  background: url("../../assets/background.png");
+  background-size: cover;
+  width: 1634px;
+  height: 968px;
+  position: relative;
+  overflow: hidden;
+
+  &_shadow-top {
+    background: url("../../assets/shadow-top.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 968px;
+    height: 303px;
+  }
+
+  &_options {
+    background: url("../../assets/icons-options.png");
+    position: absolute;
+    left: 14px;
+    top: 23px;
+    width: 407px;
+    height: 101px;
+  }
+
+  &_reverse {
+    background: url("../../assets/icon-reverse.png");
+    position: absolute;
+    left: 345px;
+    top: 478px;
+    width: 218px;
+    height: 83px;
+  }
+
+  &_doctor {
+    background: url("../../assets/doctor.png");
+    position: absolute;
+    left: 179px;
+    top: 261px;
+    width: 160px;
+    height: 559px;
+  }
+
+  &_user-info {
+    background: url("../../assets/background-user-info.png");
+    position: absolute;
+    left: 0;
+    top: 300px;
+    width: 221px;
+    height: 263px;
+  }
+
+  &_user-info-level {
+    @include font-lato();
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    width: 139px;
+    position: absolute;
+    left: 68px;
+    top: 17px;
+    font-size: 85px;
+  }
+
+  &_user-info-name {
+    @include font-pragati();
+    color: #fff;
+    text-align: right;
+    width: 195px;
+    position: absolute;
+    left: 0;
+    top: 165px;
+    font-size: 47px;
+  }
+
+  &_user-info-id {
+    @include font-pragati();
+    color: #fff;
+    text-align: right;
+    width: 195px;
+    position: absolute;
+    left: 0;
+    top: 215px;
+    font-size: 23px;
+  }
+
+  &_user-info-level-progress {
+    transform: scale(1.63) rotate(-90deg);
+    transform-origin: 50% 50%;
+    position: absolute;
+    left: 87px;
+    top: 36px;
+    pointer-events: none;
+  }
+
+  &_left-panel {
+    position: absolute;
+    left: 34px;
+    top: 605px;
+    width: 611px;
+    height: 337px;
+    transform-origin: left;
+    transform: perspective(1000px) rotateZ(-2.5deg) translateZ(100px)
+      rotateY(10deg);
+  }
+
+  &_right-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 791px;
+    height: 968px;
+    transform-origin: right;
+    transform: perspective(1000px) rotateZ(2.5deg) translateZ(100px)
+      rotateY(-10deg);
+  }
+
+  &_right-buttons {
+    background: url("../../assets/buttons-right.png");
+    position: absolute;
+    right: 0;
+    top: 381px;
+    width: 756px;
+    height: 495px;
+  }
+
+  &_combat {
+    background: url("../../assets/button-combat.png");
+    position: absolute;
+    right: 0;
+    top: 146px;
+    width: 722px;
+    height: 269px;
+  }
+
+  &_voice {
+    background: url("../../assets/background-voice.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 611px;
+    height: 121px;
+    @include font-pragati();
+    color: #fff;
+    font-size: 22px;
+
+    & .text {
+      padding-top: 44px;
+      padding-left: 28px;
+      padding-bottom: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &_banners {
+    background: url("../../assets/banners.png");
+    position: absolute;
+    left: 0;
+    top: 733px - 605px;
+    width: 611px;
+    height: 209px;
+  }
+
+  &_chara {
+    position: absolute;
+    background-size: 100% 100%;
+  }
+
+  &_sanity {
+    @include font-lato();
+    position: absolute;
+    font-size: 109px;
+    top: 7px;
+    left: 53px;
+    text-align: right;
+    width: 200px;
+    text-shadow: rgba(64, 64, 64, 0.5) 4px 4px;
+  }
+
+  &_current-mission {
+    @include font-pragati();
+    position: absolute;
+    top: 159px;
+    left: 283px;
+    font-size: 25px;
+  }
+
+  &_prices {
+    background: url("../../assets/banner-prices.png");
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 791px;
+    height: 104px;
+  }
+
+  &_prices-datetime {
+    @include font-pragati();
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 27px;
+    top: -4px;
+    left: 200px;
+    width: 178px;
+  }
+
+  @mixin prices-values() {
+    @include font-pragati();
+    position: absolute;
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.67) 3px 3px;
+    top: 36px;
+    font-size: 43px;
+  }
+
+  &_prices-blue {
+    @include prices-values();
+    text-align: left;
+    left: 176px;
+  }
+
+  &_prices-red {
+    @include prices-values();
+    left: 394px;
+  }
+
+  &_prices-yellow {
+    @include prices-values();
+    left: 591px;
+  }
+}
