@@ -1,9 +1,14 @@
-@mixin font-lato {
+@mixin font-lexend {
   font-family: "Lexend Deca", sans-serif;
 }
 
 @mixin font-pragati {
   font-family: "Pragati Narrow", sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
 .Canvas {
@@ -60,7 +65,7 @@
   }
 
   &_user-info-level {
-    @include font-lato();
+    @include font-lexend();
     color: #fff;
     text-align: center;
     width: 139px;
@@ -175,7 +180,7 @@
   }
 
   &_sanity {
-    @include font-lato();
+    @include font-montserrat();
     position: absolute;
     font-size: 109px;
     top: 7px;
