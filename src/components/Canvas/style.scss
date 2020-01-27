@@ -1,5 +1,5 @@
 @mixin font-lato {
-  font-family: "Lato", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 @mixin font-pragati {
@@ -61,7 +61,6 @@
 
   &_user-info-level {
     @include font-lato();
-    font-weight: 900;
     color: #fff;
     text-align: center;
     width: 139px;
