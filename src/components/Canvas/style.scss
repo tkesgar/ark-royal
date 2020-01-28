@@ -126,7 +126,7 @@
     width: 611px;
     height: 337px;
     transform-origin: left;
-    transform: perspective(1000px) rotateZ(-2.5deg) translateZ(100px)
+    transform: perspective(1000px) rotateZ(-1deg) translateZ(100px)
       rotateY(10deg);
   }
 
@@ -137,8 +137,8 @@
     width: 791px;
     height: 968px;
     transform-origin: right;
-    transform: perspective(1000px) rotateZ(2.5deg) translateZ(100px)
-      rotateY(-10deg);
+    transform: perspective(1000px) rotateZ(1deg) translateZ(100px)
+      rotateY(-10deg) translateX(5px);
   }
 
   &_right-buttons {
