@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Canvas from "../Canvas";
+import MainNavbar from "../MainNavbar";
 
 const INITIAL_PROGRESS = 0.5;
 
@@ -13,6 +14,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <MainNavbar />
       <Canvas
         progress={progress}
         charaBackground={chara}
