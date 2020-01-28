@@ -81,7 +81,7 @@ export default function Canvas({
             </svg>
 
             <ContentEditable
-              initialValue="nonani"
+              initialValue="arkroyal"
               className="Canvas_user-info-name"
             />
 
@@ -101,7 +101,7 @@ export default function Canvas({
           </div>
           <div className="Canvas_right-panel">
             <div className="Canvas_combat">
-              <ContentEditable initialValue="120" className="Canvas_sanity" />
+              <ContentEditable initialValue="25" className="Canvas_sanity" />
               <ContentEditable
                 initialValue="4-10 Burning Run"
                 className="Canvas_current-mission"
