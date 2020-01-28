@@ -18,6 +18,12 @@
   height: 968px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
+
+  &_container {
+    background: #111;
+    width: 100%;
+  }
 
   &_shadow-top {
     background: url("../../assets/shadow-top.png");
