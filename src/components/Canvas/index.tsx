@@ -25,9 +25,7 @@ export default function Canvas({
       <div className="Canvas_inner">
         <div className="Canvas">
           <div className="Canvas_shadow-top" />
-          <div className="Canvas_options" />
           <div className="Canvas_doctor" />
-          <div className="Canvas_button" />
 
           {charaImage && charaImage.data
             ? ((): JSX.Element => {
@@ -50,6 +48,9 @@ export default function Canvas({
                 );
               })()
             : null}
+
+          <div className="Canvas_options" />
+          <div className="Canvas_button" />
 
           <div className="Canvas_reverse" />
           <div className="Canvas_user-info">
