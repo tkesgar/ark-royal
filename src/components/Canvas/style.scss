@@ -24,7 +24,10 @@
 
   &_container {
     background: #111;
-    width: 100%;
+  }
+
+  &_inner {
+    width: ((1200px / 1634px) * 1634px);
     padding: 20px 0;
     height: ((1200px / 1634px) * 968px) + 40px;
   }

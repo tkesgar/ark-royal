@@ -21,10 +21,12 @@ const App: React.FC = () => {
       </div>
 
       <Container fluid>
-        <CardDeck>
-          <LevelProgressCard onChange={(value): void => setProgress(value)} />
-          <CharaImageCard onChange={(value): void => setCharaImage(value)} />
-        </CardDeck>
+        <div style={{ width: "1200px" }}>
+          <CardDeck>
+            <LevelProgressCard onChange={(value): void => setProgress(value)} />
+            <CharaImageCard onChange={(value): void => setCharaImage(value)} />
+          </CardDeck>
+        </div>
       </Container>
 
       <Footer />
