@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, CardColumns } from "react-bootstrap";
+import { Container, CardDeck } from "react-bootstrap";
 import Canvas from "../Canvas";
 import MainNavbar from "../MainNavbar";
 import LevelProgressCard from "../LevelProgressCard";
@@ -20,11 +20,11 @@ const App: React.FC = () => {
         <Canvas progress={progress} charaImage={charaImage} />
       </div>
 
-      <Container>
-        <CardColumns>
+      <Container fluid>
+        <CardDeck>
           <LevelProgressCard onChange={(value): void => setProgress(value)} />
           <CharaImageCard onChange={(value): void => setCharaImage(value)} />
-        </CardColumns>
+        </CardDeck>
       </Container>
 
       <Footer />
