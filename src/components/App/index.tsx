@@ -1,81 +1,33 @@
 import React, { useState } from "react";
+import { Container, CardColumns } from "react-bootstrap";
 import Canvas from "../Canvas";
 import MainNavbar from "../MainNavbar";
+import LevelProgressCard from "../LevelProgressCard";
+import CharaImageCard, { CharaImageInfo } from "../CharaImageCard";
+import Footer from "../Footer";
 
-const INITIAL_PROGRESS = 0.5;
+const INITIAL_PROGRESS = 7 / 22;
 
 const App: React.FC = () => {
   const [progress, setProgress] = useState(INITIAL_PROGRESS);
-  const [chara, setChara] = useState("");
-  const [left, setLeft] = useState(0);
-  const [top, setTop] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [charaImage, setCharaImage] = useState<CharaImageInfo | null>(null);
 
   return (
     <div className="App">
       <MainNavbar />
-      <Canvas
-        progress={progress}
-        charaBackground={chara}
-        charaLeft={left}
-        charaTop={top}
-        charaWidth={width}
-        charaHeight={height}
-      />
-      <div>
-        Progress
-        <input
-          type="number"
-          min="0"
-          max="1"
-          step="0.01"
-          defaultValue={INITIAL_PROGRESS}
-          onChange={(e): void => setProgress(Number(e.target.value))}
-        />
+
+      <div className="mb-5">
+        <Canvas progress={progress} charaImage={charaImage} />
       </div>
-      <div>
-        File
-        <input
-          type="file"
-          onChange={(e): void => {
-            const file = e.target.files?.[0];
-            setChara(URL.createObjectURL(file));
-          }}
-        />
-      </div>
-      <div>
-        Left
-        <input
-          type="number"
-          defaultValue={100}
-          onChange={(e): void => setLeft(Number(e.target.value))}
-        />
-      </div>
-      <div>
-        Top
-        <input
-          type="number"
-          defaultValue={100}
-          onChange={(e): void => setTop(Number(e.target.value))}
-        />
-      </div>
-      <div>
-        Width
-        <input
-          type="number"
-          defaultValue={100}
-          onChange={(e): void => setWidth(Number(e.target.value))}
-        />
-      </div>
-      <div>
-        Height
-        <input
-          type="number"
-          defaultValue={100}
-          onChange={(e): void => setHeight(Number(e.target.value))}
-        />
-      </div>
+
+      <Container>
+        <CardColumns>
+          <LevelProgressCard onChange={(value): void => setProgress(value)} />
+          <CharaImageCard onChange={(value): void => setCharaImage(value)} />
+        </CardColumns>
+      </Container>
+
+      <Footer />
     </div>
   );
 };

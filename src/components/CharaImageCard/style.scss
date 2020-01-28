@@ -1,0 +1,12 @@
+.CharaImageCard {
+  &_preview {
+    background-color: #eee;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+}

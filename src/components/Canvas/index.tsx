@@ -2,6 +2,7 @@ import React from "react";
 import "./style.scss";
 import day from "dayjs";
 import ContentEditable from "../ContentEditable";
+import { CharaImageInfo } from "../CharaImageCard";
 
 const RADIUS = 50.0;
 const STROKE_WIDTH = 3;
@@ -9,11 +10,10 @@ const CORRECTION = 0.878;
 
 export default function Canvas({
   progress = 1.0,
-  charaBackground = "",
-  charaLeft = 100,
-  charaTop = 100,
-  charaWidth = 100,
-  charaHeight = 100
+  charaImage = null
+}: {
+  progress: number;
+  charaImage: CharaImageInfo | null;
 }): React.ReactElement {
   const circ = 2.0 * RADIUS * Math.PI;
   const offset = (1.0 - progress * CORRECTION) * circ;
@@ -27,19 +27,36 @@ export default function Canvas({
         <div className="Canvas_options" />
         <div className="Canvas_doctor" />
         <div className="Canvas_button" />
-        <div
-          className="Canvas_chara"
-          style={{
-            backgroundImage: `url(${charaBackground})`,
-            left: `${charaLeft}px`,
-            top: `${charaTop}px`,
-            width: `${charaWidth}px`,
-            height: `${charaHeight}px`
-          }}
-        />
+
+        {charaImage && charaImage.data
+          ? ((): JSX.Element => {
+              const charaWidth =
+                charaImage.size * charaImage.data.img.naturalWidth;
+              const charaHeight =
+                charaImage.size * charaImage.data.img.naturalHeight;
+
+              return (
+                <div
+                  className="Canvas_chara"
+                  style={{
+                    backgroundImage: `url(${charaImage.data.url})`,
+                    left: `${charaImage.left * 1634}px`,
+                    top: `${charaImage.top * 968}px`,
+                    width: `${charaWidth}px`,
+                    height: `${charaHeight}px`
+                  }}
+                />
+              );
+            })()
+          : null}
+
         <div className="Canvas_reverse" />
         <div className="Canvas_user-info">
-          <ContentEditable className="Canvas_user-info-level" value="69" />
+          <ContentEditable
+            className="Canvas_user-info-level"
+            initialValue="69"
+          />
+
           {/* https://css-tricks.com/building-progress-ring-quickly/ */}
           <svg
             className="Canvas_user-info-level-progress"
@@ -60,81 +77,52 @@ export default function Canvas({
               }}
             />
           </svg>
-          <div
+
+          <ContentEditable
+            initialValue="nonani"
             className="Canvas_user-info-name"
-            contentEditable
-            suppressContentEditableWarning={true}
-          >
-            nonani
-          </div>
-          <div
+          />
+
+          <ContentEditable
+            initialValue="ID: 288369"
             className="Canvas_user-info-id"
-            contentEditable
-            suppressContentEditableWarning={true}
-          >
-            ID: 288369
-          </div>
+          />
         </div>
         <div className="Canvas_left-panel">
           <div className="Canvas_voice">
-            <div
+            <ContentEditable
+              initialValue="Ark Royal, ready for inspection!"
               className="text"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              No matter where I go, the war never ends... Deutschland-class
-              armored ship number 3, Admiral Graf Spee, reporting for duty.
-            </div>
+            />
           </div>
           <div className="Canvas_banners" />
         </div>
         <div className="Canvas_right-panel">
           <div className="Canvas_combat">
-            <div
-              className="Canvas_sanity"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              120
-            </div>
-            <div
+            <ContentEditable initialValue="120" className="Canvas_sanity" />
+            <ContentEditable
+              initialValue="4-10 Burning Run"
               className="Canvas_current-mission"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              4-10 Burning Run
-            </div>
+            />
           </div>
           <div className="Canvas_right-buttons" />
           <div className="Canvas_prices">
-            <div
+            <ContentEditable
+              initialValue={datetime}
               className="Canvas_prices-datetime"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              {datetime}
-            </div>
-            <div
+            />
+            <ContentEditable
+              initialValue="128080"
               className="Canvas_prices-blue"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              128080
-            </div>
-            <div
+            />
+            <ContentEditable
+              initialValue="7620"
               className="Canvas_prices-red"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              7620
-            </div>
-            <div
+            />
+            <ContentEditable
+              initialValue="102"
               className="Canvas_prices-yellow"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              102
-            </div>
+            />
           </div>
         </div>
       </div>
