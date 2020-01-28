@@ -19,14 +19,14 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  transform: scale((1200px / 1634px));
-  transform-origin: top center;
+  transform: scale((1200px / 1634px)) translateX(20px);
+  transform-origin: top left;
 
   &_container {
     background: #111;
     width: 100%;
-    padding: 10px 0;
-    height: ((1200px / 1634px) * 968px) + 20px;
+    padding: 20px 0;
+    height: ((1200px / 1634px) * 968px) + 40px;
   }
 
   &_shadow-top {
