@@ -86,7 +86,7 @@ export default function Canvas({
             />
 
             <ContentEditable
-              initialValue="ID: 288369"
+              initialValue="ID: 291749225"
               className="Canvas_user-info-id"
             />
           </div>
