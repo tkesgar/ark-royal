@@ -1,44 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ark-royal
 
-## Available Scripts
+<p align="center">
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/npm/types/scrub-js.svg">
+  </a>
+  <a href="https://eslint.org/">
+    <img alt="Code style: ESLint" src="https://img.shields.io/badge/code%20style-ESLint-blueviolet">
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg">
+  </a>
+  <a href="https://app.netlify.com/sites/ark-royal-eda91b7a/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/348bf517-d355-4560-b87b-373f38a6a75c/deploy-status">
+  </a>
+</p>
 
-In the project directory, you can run:
+> Ark Royal, reporting in for duty! I am confident in all manners of battle. Why, it was I who managed to destroy Bismarck's rudder!
 
-### `npm start`
+This is a small app to generate fake customizable [Arknights](https://www.arknights.global/) screenshot with custom character image.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development guide
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project is created using [create-react-app](https://create-react-app.dev/docs/getting-started). Feel free to consult their documentations on how to work with the framework.
 
-### `npm test`
+### Dependencies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Node.js + npm
 
-### `npm run build`
+### Setup
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  1. Clone this repo
+  2. `npm install`
+  3. `npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This repository is deployed using Netlify. Any merge to master will be automatically deployed.
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Feel free to contribute by [creating issues][issues] and [submitting pull requests][pulls].
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Miscellaneous
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Visual Studio Code settings.json
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you are using Visual Studio Code, you can use the following `settings.json`:
 
-## Learn More
+```json
+{
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "typescript.format.enable": false,
+  "typescript.validate.enable": false,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can install the following plugins:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [vscode-eslint]
+- [prettier-vscode]
+
+The configuration above will enable the following features:
+
+- Use ESLint plugin to validate files instead of built-in JavaScript and
+  TypeScript validation
+- Enable ESLint + Prettier formatting and format files on pasting new code,
+  typing something, and saving new files.
+
+Feel free to contact me if something is wrong with the configuration.
+
+## License
+
+The source code in this repository is licensed under [MIT License][license].
+
+[issues]: https://github.com/tkesgar/ark-royal/issues
+[license]: https://github.com/tkesgar/ark-royal/blob/master/LICENSE
+[pulls]: https://github.com/tkesgar/ark-royal/pulls
+[prettier-vscode]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[vscode-eslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
