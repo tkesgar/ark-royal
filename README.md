@@ -17,6 +17,10 @@
 
 > Ark Royal, reporting in for duty! I am confident in all manners of battle. Why, it was I who managed to destroy Bismarck's rudder!
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tkesgar/ark-royal/master/screenshot.jpg">
+</p>
+
 This is a small app to generate fake customizable [Arknights](https://www.arknights.global/) screenshot with custom character image.
 
 ## Development guide
